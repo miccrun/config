@@ -40,7 +40,7 @@ function fp() {
     echo `pwd`/"$1"
 }
 
-export PATH="$HOME/.vim/bundle/powerline/scripts:/usr/local/bin:$(go env GOPATH)/bin:$PATH"
+export PATH="$HOME/.vim/bundle/powerline/scripts:/usr/local/bin:/usr/local/sbin:$(go env GOPATH)/bin:$PATH"
 
 # Go
 export GOPATH="$HOME/go"

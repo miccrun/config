@@ -27,3 +27,9 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 pip install powerline-status
 ```
+
+Post Installation
+```bash
+cd ~/.vim/bundle/YouCompleteMe
+python3 ./install.py --js-completer --go-completer
+```

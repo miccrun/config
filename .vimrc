@@ -11,27 +11,22 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kana/vim-fakeclip'
 
 "Project
+Plugin 'kana/vim-fakeclip'
 Plugin 'grep.vim'
-Plugin 'kien/ctrlp.vim.git'
-Plugin 'indexer.tar.gz'
-Plugin 'vimprj'
-Plugin 'DfrankUtil'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "Autocomplete
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'valloric/youcompleteme'
 
 "Code Helper
-Plugin 'miccrun/snipmate.vim.git'
 Plugin 'scrooloose/nerdcommenter.git'
 Plugin 'godlygeek/tabular.git'
 
 "Window Management
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'moll/vim-bbye'
-Plugin 'miccrun/winmanager--Fox'
 Plugin 'fholgado/minibufexpl.vim'
 
 "Tags
@@ -46,7 +41,6 @@ Plugin 'pangloss/vim-javascript.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade.git'
 Plugin 'python_fold'
-Plugin 'matchit.zip'
 
 "Appearance
 Plugin 'morhetz/gruvbox'
@@ -314,23 +308,6 @@ endif
 map <silent><leader>b :TagbarToggle<CR>
 
 
-" WinManager
-let g:NERDTree_title         = '[NERD Tree]'
-let g:winManagerWindowLayout = 'NERDTree'
-let g:winManagerWidth        = 30
-let g:defaultExplorer        = 0
-
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
-
-map <leader>t :WMToggle<CR>
-
-
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim    = 0
 let g:miniBufExplMapWindowNavArrows = 0
@@ -342,15 +319,13 @@ let g:miniBufExplModSelTarget       = 1
 let Grep_Default_Filelist = '*.cpp *.h *.cc *.c *.php *.js *.css *.html *.phtml *.py *.rb *.coffee'
 
 
-" NeoComplete
-let g:neocomplete#enable_at_startup = 1
-
-
 " CtrlP
 let g:ctrlp_map           = '<C-I>'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore            +=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 map <C-i> :CtrlPMRU<CR>
+let g:ctrlp_working_path_mode = 'ra'
+
 
 " Syntastic
 set statusline+=%#warningmsg#

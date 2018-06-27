@@ -11,6 +11,7 @@ git fetch
 git checkout --track -b master origin/master
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+pip install powerline-status
 ```
 
 
@@ -24,4 +25,5 @@ git fetch
 git checkout --track -b master origin/master
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+pip install powerline-status
 ```

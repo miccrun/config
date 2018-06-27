@@ -40,17 +40,27 @@ function fp() {
     echo `pwd`/"$1"
 }
 
-export PATH="$HOME/.vim/bundle/powerline/scripts:/usr/local/bin:/usr/local/sbin:$(go env GOPATH)/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Go
-export GOPATH="$HOME/go"
+if hash go 2>/dev/null; then
+    export GOPATH="$HOME/go"
+    export PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
 # Powerline
-. ~/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
+if hash powerline-daemon 2>/dev/null; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -d "$HOME/.nvm" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi

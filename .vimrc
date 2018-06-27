@@ -347,7 +347,7 @@ let g:neocomplete#enable_at_startup = 1
 
 
 " CtrlP
-let g:ctrlp_map           = '<C-o>'
+let g:ctrlp_map           = '<C-I>'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore            +=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 map <C-i> :CtrlPMRU<CR>
@@ -371,7 +371,6 @@ let g:syntastic_aggregate_errors = 1
 set pastetoggle=<F6>
 map <silent> <leader>T  :TagbarToggle<CR>
 map <silent> <leader>f  :Rgrep<CR>
-map <silent> <leader>m  :make<CR>:cw<CR>
 map <silent> <leader>n  :noh<CR>
 map <silent> <leader>l  :set list!<CR>
 map <silent> <leader>c  :%s/[\r \t]\+$//<CR>
@@ -380,24 +379,27 @@ map <silent> <leader>q  :qall<CR>
 map <silent> <leader>fq  :qall!<CR>
 map <silent> <leader>y  "+y
 map <silent> <leader>p  "+p
-map <silent> <leader>cd :cd %:p:h<CR>
 map <silent> <leader>dd :Bdelete<CR>
-map <silent> <leader>ef :CtrlP<CR>
-map <silent> <leader>et :CtrlPBuffer<CR>
-map <silent> <leader>er :CtrlPMRU<CR>
 map <silent> <leader>ee :Tabularize /=<CR>
+map <silent> <leader>t :NERDTreeToggle<CR>
+map <C-o> :NERDTreeFocus<CR>
 map <C-p> :cp<CR>
 map <C-n> :cn<CR>
 "map <C-S-p> :lprevious<CR>
 "map <C-S-n> :lnext<CR>
-"map J <C-d>
-"map K <C-u>
-map H :bp<CR>
-map L :bn<CR>
-map <C-h> <C-w>h
-map <C-l> <C-w>l
-map <C-j> <C-w>j
-map <C-k> <C-w>k
+if has("mac")
+    map h <C-w>h
+    map l <C-w>l
+    map j <C-w>j
+    map k <C-w>k
+else
+    map <A-h> <C-w>h
+    map <A-l> <C-w>l
+    map <A-j> <C-w>j
+    map <A-k> <C-w>k
+endif
+map <C-h> :bp<CR>
+map <C-l> :bn<CR>
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "k"
 inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"

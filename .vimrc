@@ -50,7 +50,7 @@ Plugin 'matchit.zip'
 
 "Appearance
 Plugin 'morhetz/gruvbox'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
 call vundle#end()
 
 

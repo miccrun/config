@@ -1,5 +1,6 @@
 export EDITOR=vim
 
+# Aliases
 alias ll='ls -alhF'
 alias df='df -h'
 alias grep='grep --color=auto'
@@ -15,21 +16,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias listen='lsof -i -n -P | grep LISTEN'
 fi
 
-#Git shortcuts
-git_rebase() {
-    git rebase -i HEAD~$1
-}
-alias gst='git status'
-alias gpp='git pull && git push'
-alias gcb='git checkout -b'
-alias gb='git branch'
-alias gc='git checkout'
-alias gl='git log'
-alias gca='git commit -a'
-alias gda='git checkout -- .'
-alias gdf='git diff'
-alias grb=git_rebase
-
 alias ..='cd ..'
 alias cdd='cd ~/Downloads/'
 
@@ -39,6 +25,23 @@ alias p8='ping 8.8.8.8'
 function fp() {
     echo `pwd`/"$1"
 }
+
+# Git shortcuts
+if hash git 2>/dev/null; then
+    git_rebase() {
+        git rebase -i HEAD~$1
+    }
+    alias gst='git status'
+    alias gpp='git pull && git push'
+    alias gcb='git checkout -b'
+    alias gb='git branch'
+    alias gc='git checkout'
+    alias gl='git log'
+    alias gca='git commit -a'
+    alias gda='git checkout -- .'
+    alias gdf='git diff'
+    alias grb=git_rebase
+fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 

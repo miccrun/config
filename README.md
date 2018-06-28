@@ -29,6 +29,7 @@ pip install powerline-status
 ```
 
 Post Installation
+---
 ```bash
 cd ~/.vim/bundle/YouCompleteMe
 python3 ./install.py --js-completer --go-completer

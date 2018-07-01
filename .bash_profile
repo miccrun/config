@@ -52,7 +52,7 @@ if hash go 2>/dev/null; then
 fi
 
 # Powerline
-if hash powerline-daemon 2>/dev/null; then
+if hash powerline-daemon 2>/dev/null && [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1

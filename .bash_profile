@@ -31,6 +31,10 @@ if hash git 2>/dev/null; then
     git_rebase() {
         git rebase -i HEAD~$1
     }
+
+    git_discard() {
+        git checkout -- $1
+    }
     alias gst='git status'
     alias gpp='git pull && git push'
     alias gcb='git checkout -b'
@@ -38,6 +42,7 @@ if hash git 2>/dev/null; then
     alias gc='git checkout'
     alias gl='git log'
     alias gca='git commit -a'
+    alias gd=git_discard
     alias gda='git checkout -- .'
     alias gdf='git diff'
     alias grb=git_rebase

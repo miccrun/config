@@ -1,5 +1,7 @@
 export EDITOR=vim
 
+bind Space:magic-space
+
 # Aliases
 alias ll='ls -alhF'
 alias df='df -h'

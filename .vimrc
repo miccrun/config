@@ -18,7 +18,7 @@ Plugin 'grep.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 "Autocomplete
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 
 "Code Helper
 Plugin 'scrooloose/nerdcommenter.git'

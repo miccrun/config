@@ -28,6 +28,10 @@ function fp() {
     echo `pwd`/"$1"
 }
 
+function showcert() {
+    openssl x509 -text -noout -in $1
+}
+
 # Git shortcuts
 if hash git 2>/dev/null; then
     git_rebase() {

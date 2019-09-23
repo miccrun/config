@@ -29,7 +29,11 @@ function fp() {
 }
 
 function showcert() {
-    openssl x509 -text -noout -in $1
+    if [ -f "$1" ]; then
+        openssl x509 -text -noout -in $1
+    else
+        true | openssl s_client -connect $1:443 | openssl x509 -text -noout
+    fi
 }
 
 # Git shortcuts
@@ -52,6 +56,7 @@ if hash git 2>/dev/null; then
     alias gda='git checkout -- .'
     alias gdf='git diff'
     alias grb=git_rebase
+    alias gcam='git commit --amend'
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"

@@ -32,7 +32,12 @@ function showcert() {
     if [ -f "$1" ]; then
         openssl x509 -text -noout -in $1
     else
-        true | openssl s_client -connect $1:443 | openssl x509 -text -noout
+        if [[ $1 =~ :[0-9]+$ ]]; then
+            TARGET=$1
+        else
+            TARGET=$1:443
+        fi
+        true | openssl s_client -connect $TARGET | openssl x509 -text -noout
     fi
 }
 

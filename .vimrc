@@ -31,7 +31,6 @@ Plugin 'fholgado/minibufexpl.vim'
 
 "Tags
 Plugin 'majutsushi/tagbar.git'
-Plugin 'lukaszkorecki/CoffeeTags'
 
 "Syntax Enhancement
 Plugin 'scrooloose/syntastic'

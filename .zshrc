@@ -110,6 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+autoload -Uz select-word-style
+select-word-style shell
+bindkey \^U backward-kill-line
+
 export EDITOR=vim
 
 # Aliases

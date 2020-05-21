@@ -122,7 +122,7 @@ alias df='df -h'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
 alias du='du -c -h'
-alias duh='du -h -d 1'
+alias duh='du -hs $(ls -A) 2>&1 | grep -v "du: " | sort -h'
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias ls='ls -F --color=auto'

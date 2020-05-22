@@ -117,11 +117,10 @@ bindkey \^U backward-kill-line
 export EDITOR=vim
 
 # Aliases
-alias ll='ls -alhF'
+alias ll='ls -AlhF'
 alias df='df -h'
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
-alias du='du -c -h'
 alias duh='du -hs $(ls -A) 2>&1 | grep -v "du: " | sort -h'
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then

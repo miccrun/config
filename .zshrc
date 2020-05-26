@@ -115,6 +115,7 @@ select-word-style shell
 bindkey \^U backward-kill-line
 
 export EDITOR=vim
+export LESS="-F -X -R"
 
 # Aliases
 alias ll='ls -AlhF'

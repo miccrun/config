@@ -110,6 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+setopt no_share_history
+
 autoload -Uz select-word-style
 select-word-style shell
 bindkey \^U backward-kill-line

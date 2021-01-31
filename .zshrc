@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt no_share_history
+setopt +o nomatch
 
 autoload -Uz select-word-style
 select-word-style shell
